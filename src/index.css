@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  /* letter-spacing: 0.05em; */
+  font-family: 'Montserrat','Playfair Display','Libre Baskerville','Nunito sans',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #146178 #EAEAEA;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+ }
+ 
+ *::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #0f0f0f;
+  border: 1px solid rgba(251, 191, 36, 0.1);
+ }
+ 
+ *::-webkit-scrollbar-track:hover {
+  background-color: #1a1a1a;
+ }
+ 
+ *::-webkit-scrollbar-track:active {
+  background-color: #262626;
+ }
+ 
+ *::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #f59e0b;
+ }
+ 
+ *::-webkit-scrollbar-thumb:hover {
+  background-color: #fcd34d;
+ }
+ 
+ *::-webkit-scrollbar-thumb:active {
+  background-color: #fbbf24;
+ }
+
+.custom-calendar .fc-toolbar-title {
+  font-size: 1.1rem !important;
+  color:white;
+}
+.fc-toolbar-chunk{
+  color:white;
+}
+.custom-calendar .fc-header-toolbar {
+  padding: 1rem;
+  margin-bottom: 0 !important;
+}
+
+.custom-calendar .fc-day-today {
+  background: rgb(255, 255, 255) !important;
+}
+.fc-view-harness {
+  color: white !important;
+}
+
+.custom-calendar .fc-event {
+  border: none;
+  border-radius: 4px;
+}
+
+.custom-calendar .fc-more-popover {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-calendar .fc-button {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  border-radius: 0.375rem !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.custom-calendar .fc-button:hover {
+  background: #f9fafb !important;
+}
+
+.custom-calendar .fc-button-active {
+  background: #f3f4f6 !important;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
