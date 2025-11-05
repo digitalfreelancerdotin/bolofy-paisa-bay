@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LogOut, Calendar, FileText, ChevronDown, User, Settings, Bell } from 'lucide-react';
+import { LogOut, Calendar, FileText, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { authUtils } from './utils/auth';
 import toast from 'react-hot-toast';

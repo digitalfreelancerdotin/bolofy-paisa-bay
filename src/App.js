@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import LandingPage from './components/LandingPage';
+import { ThemeProvider } from './context/ThemeContext';
 import LoginPage from './components/Authentication/LoginPage';
 import Chat from './components/Chat';
 import FinancialCalendar from './components/FinancialCalendar';
@@ -17,17 +17,18 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Auth Route Component - only for login page, redirects to chat if logged in
+// Auth Route Component - only for login page, redirects to home if logged in
 const AuthRoute = ({ children }) => {
   if (authUtils.isAuthenticated()) {
-    return <Navigate to="/chat" />;
+    return <Navigate to="/" />;
   }
   return children;
 };
 
 function App() {
   return (
-    <BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
       <Toaster 
         position="bottom-right"
         reverseOrder={false}
@@ -49,9 +50,8 @@ function App() {
       />
       
       <Routes>
-        {/* Landing page - accessible to all */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/chat" element={<Chat />} />
+        {/* Chat as default landing page - accessible to all */}
+        <Route path="/" element={<Chat />} />
         
         {/* Login page - redirects to chat if already logged in */}
         <Route path="/login" element={
@@ -76,7 +76,8 @@ function App() {
         {/* Catch all undefined routes */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

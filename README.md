@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# OpenEvents
+
+OpenEvents is an AI-powered event discovery and management platform with an intelligent chatbot interface.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -32,9 +32,21 @@ const MarkdownRenderer = ({ content }) => {
             </code>
           );
         },
-        h1: ({ node, ...props }) => <h1 className="text-2xl font-bold mt-6 mb-4 text-amber-100" {...props} />,
-        h2: ({ node, ...props }) => <h2 className="text-xl font-bold mt-5 mb-3 text-amber-100" {...props} />,
-        h3: ({ node, ...props }) => <h3 className="text-lg font-bold mt-4 mb-2 text-amber-100" {...props} />,
+        h1: ({ node, children, ...props }) => (
+          children && children.length ? (
+            <h1 className="text-2xl font-bold mt-6 mb-4 text-amber-100" {...props}>{children}</h1>
+          ) : null
+        ),
+        h2: ({ node, children, ...props }) => (
+          children && children.length ? (
+            <h2 className="text-xl font-bold mt-5 mb-3 text-amber-100" {...props}>{children}</h2>
+          ) : null
+        ),
+        h3: ({ node, children, ...props }) => (
+          children && children.length ? (
+            <h3 className="text-lg font-bold mt-4 mb-2 text-amber-100" {...props}>{children}</h3>
+          ) : null
+        ),
         p: ({ node, ...props }) => <p className="mb-4 text-amber-100/90" {...props} />,
         ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4 space-y-1 text-amber-100/90" {...props} />,
         ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4 space-y-1 text-amber-100/90" {...props} />,

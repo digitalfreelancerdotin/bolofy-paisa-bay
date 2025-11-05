@@ -100,7 +100,7 @@ const PolicyCard = ({ policy, policyKey, isExpanded, onToggle, calendarRef, onDe
     toast.success('Opening policy document');
   };
 
-  const daysLeft = calculateDaysLeft(policy.metadata.end_date);
+  // removed unused daysLeft
   // const isExpired = daysLeft <= 0;
   // const isExpiring = daysLeft <= 30 && daysLeft > 0;
 
@@ -344,7 +344,7 @@ const MyPoliciesPage = () => {
   const navigate = useNavigate();
   const [policies, setPolicies] = useState({});
   const [expandedPolicies, setExpandedPolicies] = useState(new Set());
-  const [isLoading, setIsLoading] = useState(false);
+  // removed unused isLoading state
   const [isUploading, setIsUploading] = useState(false);
 
   const handleDelete = (policyNumber) => {

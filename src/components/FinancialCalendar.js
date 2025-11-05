@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar as CalendarIcon, Clock, FileText, IndianRupee, Shield, User, ArrowLeft, Bell } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, FileText, IndianRupee, Shield, User, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import { format, parseISO, isWithinInterval } from 'date-fns';
 import toast from 'react-hot-toast';
@@ -64,7 +64,7 @@ const PolicyCard = ({ policy, isExpanded, onToggle, calendarRef }) => {
     toast.success('Opening policy document');
   };
 
-  const daysLeft = calculateDaysLeft(policy.metadata.end_date);
+  // removed unused daysLeft
   const getRenewalStatus = (endDate) => {
     const daysLeft = calculateDaysLeft(endDate);
     
@@ -321,7 +321,7 @@ const FinancialCalendar = () => {
 
   useEffect(() => {
     fetchPolicies();
-  }, []);
+  }, [fetchPolicies]);
 
   const handleEventClick = (clickInfo) => {
     const policyId = clickInfo.event.policyId;
